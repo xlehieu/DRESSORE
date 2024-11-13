@@ -1,0 +1,41 @@
+<div class='row mt-4'>
+    {{#each products}}
+        <div class='col-4 banner-item image-zoom-effect mt-4'>
+            <div class='thumb-content image-holder'>
+                <a href='/san-pham/{{this.slug}}'>
+                    <img class='w-100' src='{{this.thumb}}' alt='{{this.name}}' data-id='{{this._id}}' />
+                </a>
+                <div class='w-100 add-to-cart-product'>
+                    <div class='choose-size'>
+                        <span class='product-feature-size circle circle_border active' data-size='S'>
+                            <span class='name'>S</span>
+                            <span class='circle-disable d-none'></span>
+                        </span>
+                        <span class='product-feature-size circle circle_border' data-size='M'>
+                            <span class='name'>M</span>
+                            <span class='circle-disable d-none'></span>
+                        </span>
+                        <span class='product-feature-size circle circle_border' data-size='L'>
+                            <span class='name'>L</span>
+                            <span class='circle-disable d-none'></span>
+                        </span>
+                    </div>
+                    <button
+                        class='btn btn-primary w-100 add-to-cart-product-btn'
+                        data-id='{{this._id}}'
+                        data-product='{{jsonData this}}'
+                    >Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-7 d-flex flex-column pe-0'>
+                    <a class='product-name' href='/san-pham/{{this.slug}}'>{{this.name}}</a>
+                    <span>{{toVND this.price}}</span>
+                </div>
+                <div class='col-5'>
+                    <a class='float-end' href='/san-pham/{{this.slug}}'>MS: {{this.ms}}</a>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>

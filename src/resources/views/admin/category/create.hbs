@@ -1,0 +1,47 @@
+<form method='post' id='create-category-form' enctype='multipart/form-data'>
+    <div class='row mt-3'>
+        <div class='col-12'>
+            <h4>THÊM DANH MỤC</h4>
+        </div>
+        <div class='col-lg-8 col-md-6 col-sm-12 d-flex flex-column gap-4'>
+            <div class='d-flex flex-column'>
+                <label for='category-name-create'>TÊN DANH MỤC</label>
+                <input id='category-name-create' name='name' placeholder='Tên danh mục*' class='px-2 py-1 mt-1' />
+            </div>
+            <div class='d-flex flex-column'>
+                <label for='category-description-create'>MÔ TẢ</label>
+                <textarea id='summernote' name='description'></textarea>
+            </div>
+            <div>
+                <button class='btn btn-primary fs-5 float-end' type='submit'>THÊM DANH MỤC</button>
+            </div>
+        </div>
+        <div class='col-lg-4 col-md-6 col-sm-12 d-flex flex-column gap-4'>
+            <div class='d-flex flex-column'>
+                <label for='category-thumb-create'>HÌNH ẢNH</label>
+                <input
+                    id='category-thumb-create'
+                    name='thumb'
+                    type='file'
+                    placeholder='Hình ảnh'
+                    class='px-2 py-1 border border-dark'
+                />
+            </div>
+            <div class='d-flex flex-column'>
+                <p>HIỂN THỊ TRANG CHỦ</p>
+                <div class='form-switch d-flex'>
+                    <input class='form-check-input' type='checkbox' name='isShow' id='switch-is-show' />
+                    <label class='form-check-label' for='switch-is-show'>Hiển thị</label>
+                </div>
+            </div>
+            <div class='d-flex flex-column'>
+                <p>HIỂN THỊ TRONG MENU</p>
+                <div class='form-switch d-flex'>
+                    <input class='form-check-input' type='checkbox' name='isInMenu' id='switch-is-in-menu' />
+                    <label class='form-check-label' for='switch-is-show'>Hiển thị</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script src='/script/admin/category.js'></script>

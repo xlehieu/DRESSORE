@@ -1,0 +1,90 @@
+<div class='row mt-3'>
+    {{#if message}}
+        <div class='col-12 alert alert-success alert-dismissible fade show' role='alert'>
+            <h4 class='alert-heading'><svg class='bi flex-shrink-0 me-2' role='img' aria-label='Success:'><use
+                        xlink:href='#check-circle-fill'
+                    /></svg>
+                {{message}}
+            </h4>
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+        </div>
+    {{/if}}
+    <div class='col-12'>
+        <h4 class='float-start'>DANH SÁCH DANH MỤC</h4>
+        <a class='float-end btn btn-primary' href='/tui-la-admin/danh-muc/create'>THÊM DANH MỤC MỚI</a>
+    </div>
+    <div class='col-12'>
+        <table class='table table-striped table-hover fs-5'>
+            <thead>
+                <tr>
+                    <th scope='col'>#</th>
+                    <th scope='col'>ẢNH</th>
+                    <th scope='col'>TÊN</th>
+                    <th scope='col'>HIỂN THỊ HOME</th>
+                    <th class='text-center' scope='col'><i class='fa-solid fa-table-cells'></i></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each categories}}
+                    <tr>
+                        {{! tên của helpers }}
+                        <th class='py-2'>{{orderUp @index}}</th>
+                        <td>
+                            <a href='/tui-la-admin/danh-muc/detail/{{this.slug}}'>
+                                <img class='rounded' width='40' height='40' src='{{this.thumb}}' alt='{{this.name}}' />
+                            </a>
+                        </td>
+                        <td style='min-width: 300px;'>
+                            <a href='/tui-la-admin/danh-muc/detail/{{this.slug}}'>
+                                {{this.name}}
+                            </a>
+                        </td>
+                        <td>{{#if this.isShow}}Đang hiển thị{{else}}Không hiển thị{{/if}}</td>
+                        <td>
+                            <div class='list-none p-0 d-flex justify-content-center gap-3'>
+                                <div class='d-inline-block'>
+                                    <a
+                                        href='/tui-la-admin/danh-muc/edit/{{this._id}}'
+                                        class='btn btn-outline-warning rounded'
+                                    >
+                                        <i class='fa-solid fa-pen'></i>
+                                    </a>
+                                </div>
+                                <div class='d-inline-block'>
+                                    <button
+                                        href='/tui-la-admin/danh-muc/delete/{{this._id}}'
+                                        class='btn btn-outline-danger rounded'
+                                        data-bs-toggle='modal'
+                                        data-bs-target='#confirmDeleteCategory'
+                                        data-id='{{this._id}}'
+                                    >
+                                        <i class='fa-solid fa-trash'></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class='modal' tabindex='-1' id='confirmDeleteCategory'>
+    <div class='modal-dialog'>
+        <div class='modal-content'>
+            <div class='modal-header'>
+                <h5 class='modal-title'>Xác nhận xóa</h5>
+                <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+            </div>
+            <div class='modal-body'>
+                <p>Xóa thông tin</p>
+            </div>
+            <div class='modal-footer'>
+                <button type='button' id='deleteCategoryBtn' class='btn btn-danger'>Xóa bỏ</button>
+                <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Hủy</button>
+            </div>
+        </div>
+    </div>
+</div>
+<form method='post' id='deleteCategoryForm'></form>
+<script src='/script/admin/category.js'></script>

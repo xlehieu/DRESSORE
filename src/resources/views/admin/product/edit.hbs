@@ -1,0 +1,92 @@
+<form
+    method='post'
+    id='create-category-form'
+    enctype='multipart/form-data'
+    action='/tui-la-admin/san-pham/edit?_method=PUT'
+>
+    <input type='hidden' name='id' value='{{product._id}}' />
+    <div class='row mt-3'>
+        <div class='col-12'>
+            <h4>CHỈNH SỬA SẢN PHẨM</h4>
+        </div>
+        <div class='col-lg-8 col-md-6 col-sm-12 d-flex flex-column gap-4'>
+            <div class='d-flex flex-column'>
+                <label for='product-name-create'>TÊN SẢN PHẨM</label>
+                <input
+                    id='product-name-create'
+                    value='{{product.name}}'
+                    name='name'
+                    placeholder='Tên sản phẩm*'
+                    class='px-2 py-1 mt-1'
+                />
+            </div>
+            <div class='d-flex flex-column'>
+                <label for='product-description-create'>MÔ TẢ</label>
+                <textarea id='summernote' name='description'>{{{product.description}}}</textarea>
+            </div>
+            <div>
+                <button class='btn btn-primary fs-5 float-end' type='submit'>LƯU</button>
+            </div>
+        </div>
+        <div class='col-lg-4 col-md-6 col-sm-12 d-flex flex-column gap-4'>
+            <div class='d-flex flex-column'>
+                <label for='product-ms-create'>MÃ SỐ SẢN PHẨM</label>
+                <input
+                    id='product-ms-create'
+                    value='{{product.ms}}'
+                    name='ms'
+                    placeholder='Mã số sản phẩm*'
+                    class='px-2 py-1 mt-1'
+                />
+            </div>
+            <div class='d-flex flex-column'>
+                <label for='product-price-create'>GIÁ SẢN PHẨM</label>
+                <input
+                    id='product-price-create'
+                    name='price'
+                    value='{{product.price}}'
+                    placeholder='Giá sản phẩm*'
+                    class='px-2 py-1 mt-1'
+                />
+            </div>
+            <div class='d-flex flex-column'>
+                <label for='product-quantity-create'>SỐ LƯỢNG SẢN PHẨM</label>
+                <input
+                    id='product-quantity-create'
+                    name='quantity'
+                    value='{{product.quantity}}'
+                    placeholder='Số lượng sản phẩm*'
+                    class='px-2 py-1 mt-1'
+                />
+            </div>
+            <div class='d-flex flex-column'>
+                <label for='product-quantity-create'>DANH MỤC SẢN PHẨM</label>
+                <select class='form-select' name='category'>
+                    <option disabled value='{{product.category}}'>Chọn danh mục*</option>
+                    {{!-- {{#each categories}}
+                        <option
+                            value='{{this._id}}'
+                            checked='{{compareCat this._id product.category}}'
+                        >{{this.name}}</option>
+                    {{/each}} --}}
+                    {{renderCheckboxCategory categories product.category}}
+                </select>
+            </div>
+            <div class='d-flex flex-column'>
+                <label for='category-thumb-create'>HÌNH ẢNH</label>
+                <input
+                    id='category-thumb-create'
+                    name='thumb'
+                    type='file'
+                    value='{{product.thumb}}'
+                    placeholder='Hình ảnh'
+                    class='px-2 py-1 border border-dark'
+                />
+                {{#if product.thumb}}
+                    <img id='product-thumb-edit' class='pt-2' src='{{product.thumb}}' alt='{{product.name}}' />
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</form>
+<script src='/script/admin/category.js'></script>

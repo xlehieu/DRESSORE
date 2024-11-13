@@ -1,0 +1,100 @@
+<div class='row mt-3'>
+    {{#if message}}
+        <div class='col-12 alert alert-success alert-dismissible fade show' role='alert'>
+            <h4 class='alert-heading'><svg class='bi flex-shrink-0 me-2' role='img' aria-label='Success:'><use
+                        xlink:href='#check-circle-fill'
+                    /></svg>
+                {{message}}
+            </h4>
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+        </div>
+    {{/if}}
+    <div class='col-12'>
+        <h4 class='float-start'>DANH SÁCH SẢN PHẨM</h4>
+        <a class='float-end btn btn-primary' href='/tui-la-admin/san-pham/create'>THÊM SẢN PHẨM MỚI</a>
+    </div>
+    <div class='col-12'>
+        <table class='table table-striped table-hover fs-5'>
+            <thead>
+                <tr>
+                    <th class='text-center' scope='col'>#</th>
+                    <th class='text-center' scope='col'>ẢNH</th>
+                    <th scope='col'>TÊN</th>
+                    <th class='text-center' scope='col'>GIÁ</th>
+                    <th class='text-center' scope='col'>SL</th>
+                    <th class='text-center' scope='col'>DANH MỤC</th>
+                    <th class='text-center' scope='col'><i class='fa-solid fa-table-cells'></i></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each products}}
+                    <tr>
+                        {{! tên của helpers }}
+                        <th class='py-2 text-center'>{{orderUp @index}}</th>
+                        <td class='text-center'>
+                            <a href='/tui-la-admin/san-pham/detail/{{this.slug}}'>
+                                <img class='rounded' width='40' height='40' src='{{this.thumb}}' alt='{{this.name}}' />
+                            </a>
+                        </td>
+                        <td style='min-width: 300px;'>
+                            <a href='/tui-la-admin/san-pham/detail/{{this.slug}}'>
+                                {{this.name}}
+                            </a>
+                        </td>
+                        <td class='text-center'>
+                            {{toVND this.price}}
+                        </td>
+                        <td class='text-center'>
+                            {{formatNumber this.quantity}}
+                        </td>
+                        <td class='text-center'>
+                            {{this.catName}}
+                        </td>
+                        <td>
+                            <div class='list-none p-0 d-flex justify-content-center gap-3'>
+                                <div class='d-inline-block'>
+                                    <a
+                                        href='/tui-la-admin/san-pham/edit/{{this._id}}'
+                                        class='btn btn-outline-warning rounded'
+                                    >
+                                        <i class='fa-solid fa-pen'></i>
+                                    </a>
+                                </div>
+                                <div class='d-inline-block'>
+                                    <button
+                                        href='/tui-la-admin/san-pham/delete/{{this._id}}'
+                                        class='btn btn-outline-danger rounded'
+                                        data-bs-toggle='modal'
+                                        data-bs-target='#confirmDeleteProduct'
+                                        data-id='{{this._id}}'
+                                    >
+                                        <i class='fa-solid fa-trash'></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class='modal' tabindex='-1' id='confirmDeleteProduct'>
+    <div class='modal-dialog'>
+        <div class='modal-content'>
+            <div class='modal-header'>
+                <h5 class='modal-title'>Xác nhận xóa</h5>
+                <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+            </div>
+            <div class='modal-body'>
+                <p>Xóa thông tin</p>
+            </div>
+            <div class='modal-footer'>
+                <button type='button' id='deleteProductBtn' class='btn btn-danger'>Xóa bỏ</button>
+                <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Hủy</button>
+            </div>
+        </div>
+    </div>
+</div>
+<form method='post' id='deleteProductForm'></form>
+<script src='/script/admin/product.js'></script>

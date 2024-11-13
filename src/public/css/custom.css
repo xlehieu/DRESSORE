@@ -1,0 +1,524 @@
+body {
+    --my-font: 'Darker Grotesque', serif;
+    --my-sub-font: 'Playfair Display', serif;
+    --heading-font-weight: 400;
+    --heading-color: #111;
+    --heading-line-height: 1.24;
+
+    --swiper-theme-color: #8c907e;
+
+    /* bootstrap */
+    --bs-body-font-family: 'Darker Grotesque', serif;
+    --bs-body-font-size: 18px;
+    --bs-body-font-weight: 400;
+    --bs-body-line-height: 1.5;
+    --bs-body-color: #8f8f8f;
+    --bs-body-color-rgb: 143, 143, 143;
+
+    --bs-primary: #8c907e;
+    --bs-secondary: #6c757d;
+    --bs-black: #111;
+    --bs-light: #f1f1f0;
+    --bs-dark: #212529;
+    --bs-gray: #9aa1a7;
+    --bs-gray-dark: #51565b;
+
+    --bs-primary-rgb: 140, 144, 126;
+    --bs-secondary-rgb: 108, 117, 125;
+    --bs-black-rgb: 17, 17, 17;
+    --bs-light-rgb: 241, 241, 240;
+    --bs-dark-rgb: 33, 37, 41;
+
+    --bs-link-color: #111;
+    --bs-link-color-rgb: 17, 17, 17;
+    --bs-link-decoration: underline;
+    --bs-link-hover-color: #111;
+    --bs-link-hover-color-rgb: 17, 17, 17;
+    --white-color: #fff;
+    --black-color: #000;
+}
+.nav-link {
+    cursor: pointer;
+}
+.text-blue {
+    color: #007bff !important;
+}
+/* Main layout */
+.sub-menu {
+    opacity: 0;
+    z-index: -1000;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    background-color: var(--white-color);
+    color: var(--black-color);
+}
+
+/* Khi hover vào button thì menu là displayblock, khi hover vào menu thì sẽ display block */
+
+/* Header */
+@keyframes showSubMenu {
+    0% {
+        opacity: 0;
+        z-index: 1000;
+    }
+    90% {
+        opacity: 0.7;
+        z-index: 1000;
+    }
+    100% {
+        opacity: 1;
+        z-index: 1000;
+    }
+}
+.nav-item:hover .sub-menu,
+.sub-menu:hover {
+    animation: showSubMenu 0.3s ease-in forwards;
+    z-index: 1000;
+}
+@keyframes changeColorBg {
+    from {
+        background-color: transparent;
+    }
+    to {
+        background-color: var(--white-color);
+    }
+}
+.container-fluid:hover {
+    animation: changeColorBg 0.3s ease forwards;
+}
+.container-fluid:hover .link-header-main-layout {
+    color: var(--black-color);
+}
+.sub-menu-content {
+    /* text-tranform dùng để không thay đổi gì tới việc lower hay uppercase */
+    text-transform: none;
+}
+/* Header */
+/* Main layout */
+
+/* HOME */
+.category-card a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+.btn-shop-now:hover {
+    text-decoration: underline;
+    background-color: white;
+    color: var(--black-color);
+}
+.title-paper {
+    font-family: var(--my-sub-font);
+}
+/* paper */
+.bg-paper {
+    background-color: #e1d9d0;
+}
+.bg-news-card {
+    background-color: var(--white-color);
+}
+.short-content-paper {
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.title-paper-small {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+/* HOME */
+.max-width-400 {
+    max-width: 400px;
+}
+.min-width-400 {
+    min-width: 400px;
+}
+.text-black {
+    color: var(--black-color);
+}
+/* main layout */
+.link-header-main-layout {
+    font-family: var(--my-font);
+    color: var(--white-color);
+}
+.bg-white {
+    background-color: var(--white-color);
+}
+.bg-transparent {
+    background-color: transparent;
+}
+.header-top {
+    position: absolute;
+}
+
+/* sub layout */
+.link-header-sub-layout {
+    font-family: var(--my-font);
+    color: var(--black-color);
+}
+
+.my-font {
+    font-family: var(--my-font);
+}
+
+/* login */
+.checkmark-remember-me {
+    display: block;
+    height: 25px;
+    width: 25px;
+    background-color: #ffffff;
+    border: solid 1px #909090;
+}
+.checkmark-remember-me:hover {
+    background-color: #ccc;
+}
+.remember-me #check-remember-me:checked ~ .checkmark-remember-me {
+    background-color: #2196f3;
+}
+.register-user {
+    max-width: 420px;
+}
+.register-user-ben {
+    list-style: none;
+    font-style: italic;
+}
+.register-user-ben li {
+    display: flex;
+    align-items: top;
+}
+.register-user-ben li i {
+    padding-top: 5px;
+}
+
+/* override css .form-check-input checkbox đổi màu khác */
+.form-check-input:checked {
+    background-color: var(--swiper-theme-color);
+    border-color: var(--swiper-theme-color);
+}
+.form-check-input:focus {
+    border-color: var(--bs-body-color);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(183, 183, 183, 0.25);
+}
+
+/* PRODUCT */
+.thumb-content {
+    position: relative;
+}
+.product-name {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.add-to-cart-product {
+    position: absolute;
+    display: none;
+    bottom: 0;
+}
+.thumb-content:hover .add-to-cart-product {
+    display: block;
+}
+.choose-size {
+    background-color: var(--white-color);
+    display: flex;
+    padding: 14px 0 14px;
+    opacity: 0.8;
+    justify-content: center;
+}
+.product-feature-size {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+.product-item .view-add-to-cart .size .circle {
+    margin-left: 2px;
+    margin-right: 2px;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 3px;
+}
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    cursor: pointer;
+}
+.choose-size .circle.active {
+    background-color: rgb(49, 49, 50);
+    color: rgb(255, 255, 255);
+    background-image: none;
+}
+/* PRODUCT */
+
+/* MINI CART */
+.hidden {
+    display: none;
+}
+#count-cart-item {
+    font-size: 14px;
+    color: #de5d39;
+}
+.mini-cart {
+    position: absolute;
+    background-color: var(--white-color);
+    width: 360px;
+    height: 100%;
+    float: left;
+    padding: 0 15px 20px;
+    position: fixed;
+    top: 0;
+    z-index: 100100;
+    background: #fff;
+    transition: 0.3s;
+    box-shadow: 2px 14px 10px rgba(0, 0, 0, 0.5);
+}
+.mini-cart .mini-cart-wrap {
+    width: 100%;
+    height: 93%;
+    float: left;
+}
+.mini-cart .close-box {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    background: #181818;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    cursor: pointer;
+}
+.mini-cart .mini-cart-head {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.mini-cart .mini-cart-head i {
+    font-size: 15px;
+    top: -2px;
+    position: relative;
+}
+.mini-cart .mini-cart-head span {
+    font-size: 18px;
+    padding-left: 5px;
+    text-transform: uppercase;
+}
+.mini-cart .mini-cart-wrap .mini-cart-list {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.minicart-list-product {
+    list-style: none;
+}
+/* Khi có sản phẩm trong giỏ hàng*/
+.mini-cart .minicart-product-wrap {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.mini-cart .minicart-product-thumb {
+    width: 70px;
+    flex: 0 0 auto;
+}
+.mini-cart .minicart-product-thumb img {
+    width: 100%;
+}
+.mini-cart .minicart-product-info {
+    flex: 1 1 auto;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+.mini-cart .minicart-product-info .minicart-product-name {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+.mini-cart .minicart-product-info .minicart-product-quantity {
+    color: #757575;
+    font-size: 16px;
+}
+.minicart-product-wrap .btn-remove-item {
+    color: #757575;
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    text-align: center;
+    -webkit-border-radius: 12.5px;
+    -moz-border-radius: 12.5px;
+    border-radius: 12.5px;
+    cursor: pointer;
+}
+
+.mini-cart .minicart-subtotal {
+    margin-top: 12px;
+    color: #757575;
+}
+.mini-cart .btn-mnc.btn-view-cart {
+    margin-top: 20px;
+}
+.mini-cart .btn-mnc {
+    width: 100%;
+    float: left;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: #181818;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+.mini-cart .btn-mnc.btn-checkout {
+    background: none;
+    color: #333;
+    border: 1px solid #181818;
+}
+.mini-cart .btn-mnc.btn-checkout:hover {
+    background: #181818;
+    color: #fff;
+    transition: 0.2s;
+}
+/* Khi có sản phẩm trong giỏ hàng*/
+/* MINI CART */
+
+/* THANH TOAN */
+.progressbar {
+    counter-reset: step;
+    width: 100%;
+    margin-top: 50px;
+}
+.progressbar li {
+    list-style-type: none;
+    width: 25%;
+    float: left;
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    color: #7d7d7d;
+}
+.progressbar li.active {
+    color: black;
+}
+.progressbar li.active::before {
+    background-color: black;
+}
+.progressbar li:before {
+    width: 34px;
+    height: 34px;
+    content: '';
+    line-height: 30px;
+    border: 2px solid #7d7d7d;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    background-color: white;
+}
+.progressbar .gio-hang::after {
+    display: none;
+}
+.progressbar .gio-hang::before {
+    background-image: url(https://dchic.vn/images/ic-shopping-cart-black.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.progressbar .gio-hang.active:before {
+    background-image: url(https://dchic.vn/images/ic-shopping-cart-white-min.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.progressbar .giao-hang:before {
+    background-image: url(https://dchic.vn/images/location-21x21-min.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.progressbar .giao-hang.active:before {
+    background-image: url(https://dchic.vn/images/location-21x21-white-min.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.progressbar .thanh-toan:before {
+    background-image: url(https://dchic.vn/images/paypent-21x21-min.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.progressbar .thanh-toan.active:before {
+    background-image: url(https://dchic.vn/images/paypent-21x21-white-min.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.progressbar .xac-nhan:before {
+    background-image: url(https://dchic.vn/images/confirm-21x21-min.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.progressbar .xac-nhan.active:before {
+    background-image: url(https://dchic.vn/images/confirm-21x21-white-min.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.progressbar li.active + li:after {
+    background-color: black;
+}
+.progressbar li:after {
+    width: 100%;
+    height: 4px;
+    content: '';
+    position: absolute;
+    background-color: #dedede;
+    top: 15px;
+    left: -50%;
+    z-index: -1;
+}
+.progressbar li.active:before {
+    border-color: black;
+}
+.title {
+    color: #282828;
+    font-size: 18px;
+    line-height: 100%;
+    margin: 0;
+    font-family: var(--my-font);
+    text-transform: uppercase;
+}
+.icon-check {
+    background-color: #ffffff;
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    left: 44%;
+    top: 40%;
+}
+.icon-check i {
+    color: #b99d6b;
+    font-size: 15px;
+}
+/* THANH TOAN */
+
+/* Message box */
+.message-box {
+    position: fixed;
+    top: 90px;
+    width: 500px;
+    right: 10px;
+    z-index: 9999;
+}
+/* Message box */

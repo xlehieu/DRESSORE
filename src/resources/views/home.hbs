@@ -1,0 +1,48 @@
+{{! Category }}
+<div class='row mt-4'>
+    {{#each categoriesHome}}
+        <div class='col-sm-6 col-md-3 col-lg-3 image-zoom-effect'>
+            <a class='category-card d-flex flex-column image-holder' href='/{{this.slug}}'>
+                <img style='max-width: 100%;' src='{{this.thumb}}' alt='{{this.name}}' />
+                <a class='text-center mt-2 fs-4 mx-auto' href='/{{this.lug}}'>{{this.name}}</a>
+            </a>
+        </div>
+    {{/each}}
+    <div class='col-12 mt-4'>
+        <div class='d-flex'>
+            <a href='' class='btn-shop-now btn fs-5 btn-outline-secondary mx-auto'>SHOP NOW</a>
+        </div>
+    </div>
+</div>
+{{! Category }}
+
+{{! PAPER }}
+
+<div class='row d-flex gap-3 mt-4 pb-4 pt-2 px-2 bg-paper'>
+    <h3 class='title-paper text-center mb-1 text-white'>PAPER</h3>
+    {{#if newsHome}}
+        {{#each newsHome}}
+            {{#if (isFirstElement @index)}}
+                <div class='col-lg-6 py-1 bg-news-card'>
+                    <div class='row d-flex justify-content-center align-item-center'>
+                        <div class='col-6'>
+                            <img src='{{this.thumb}}' class='img-fluid' />
+                        </div>
+                        <div class='col-6'>
+                            <h5 class='fw-bold'>{{this.title}}</h5>
+                            <p class='fw-medium short-content-paper'>{{this.shortContent}}{{this.shortContent}}</p>
+                            <a class='text-decoration-underline' href='/tin-tuc/{{this.slug}}'>Xem thêm</a>
+                        </div>
+                    </div>
+                </div>
+            {{else}}
+                <div class='col-lg-3 pt-1 bg-news-card d-flex flex-column'>
+                    <img src='{{this.thumb}}' class='img-fluid' alt='{{this.title}}' />
+                    <h6 class='title-paper-small fw-semibold'>{{this.title}}</h6>
+                    <a class='text-decoration-underline text-center w-100' href='/tin-tuc/{{this.slug}}'>Xem thêm</a>
+                </div>
+            {{/if}}
+        {{/each}}
+    {{/if}}
+</div>
+{{! PAPER }}

@@ -1,0 +1,118 @@
+<div class='row'>
+    <div class='col-12'>
+        <ul class='progressbar'>
+            <li class='gio-hang active'>
+                <div class='title'> GIỎ HÀNG </div>
+                <div class='icon-check'>
+                    <i class='fa fa-check-circle'></i>
+                </div>
+            </li>
+            <li class='giao-hang'>
+                <div class='title'>GIAO HÀNG</div>
+                <div class='icon-check d-none'>
+                    <i class='fa fa-check-circle'></i>
+                </div>
+            </li>
+            <li class='thanh-toan'>
+                <div class='title'>THANH TOÁN</div>
+                <div class='icon-check d-none'>
+                    <i class='fa fa-check-circle'></i>
+                </div>
+            </li>
+            <li class='xac-nhan'>
+                <div class='title'>XÁC NHẬN</div>
+                <div class='icon-check d-none'>
+                    <i class='fa fa-check-circle'></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class='row'>
+    <div class='col-12'>
+        <form name="checkout-information" method="post">
+            <ul class='nav nav-tabs d-none' id='myTab' role='tablist'>
+                <li class='nav-item' role='presentation'>
+                    <button
+                        class='nav-link active'
+                        id='information-tab'
+                        data-bs-toggle='tab'
+                        data-bs-target='#information-tab-pane'
+                        {{! thằng data-bs-target sẽ giúp liên kết đến thằng id information-tab-pane, bắt buộc phải để thằng panel là id }}
+                        type='button'
+                        role='tab'
+                        aria-controls='information-tab-pane'
+                        aria-selected='true'
+                    >INFORMATION</button>
+                </li>
+                <li class='nav-item' role='presentation'>
+                    <button
+                        class='nav-link'
+                        id='payments-tab'
+                        data-bs-toggle='tab'
+                        data-bs-target='#payments-tab-pane'
+                        type='button'
+                        role='tab'
+                        aria-controls='payments-tab-pane'
+                        aria-selected='false'
+                    >PAYMENTS</button>
+                </li>
+                <li class='nav-item' role='presentation'>
+                    <button
+                        class='nav-link'
+                        id='confirm-tab'
+                        data-bs-toggle='tab'
+                        data-bs-target='#confirm-tab-pane'
+                        type='button'
+                        role='tab'
+                        aria-controls='confirm-tab-pane'
+                        aria-selected='false'
+                    >CONFIRM</button>
+                </li>
+            </ul>
+            <div class='tab-content' id='myTabContent'>
+                <div
+                    class='tab-pane fade show active'
+                    id='information-tab-pane'
+                    role='tabpanel'
+                    aria-labelledby='information-tab'
+                    tabindex='0'
+                >
+                    {{>payments/information}}
+                </div>
+                <div
+                    class='tab-pane fade'
+                    id='payments-tab-pane'
+                    role='tabpanel'
+                    aria-labelledby='payments-button'
+                    tabindex='0'
+                >
+                    {{>payments/paymentsmethod}}
+                </div>
+                <div
+                    class='tab-pane fade'
+                    id='confirm-tab-pane'
+                    role='tabpanel'
+                    aria-labelledby='confirm-button'
+                    tabindex='0'
+                >
+                    {{>payments/confirmOrder}}
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="alert alert-danger d-flex align-items-center alert-dismissible fade message-box"  id="error-message" role="alert">
+        <i class="fa-solid fa-triangle-exclamation pe-2"></i>
+        <div  id="error-message-content">
+            
+        </div>
+    </div>
+    <div class="alert alert-success d-flex align-items-center alert-dismissible fade message-box"  id="success-message" role="alert">
+        <i class="fa-solid fa-circle-check pe-2"></i>
+        <div  id="success-message-content">
+            
+        </div>
+    </div>
+</div>
+
+<script src='/script/payments.js'></script>

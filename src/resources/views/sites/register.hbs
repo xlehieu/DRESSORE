@@ -1,0 +1,75 @@
+<div class='row'>
+    <div
+        class='col-12 alert alert-success alert-dismissible fade show d-none'
+        id='message-box-success-register'
+        role='alert'
+    >
+        <h4 class='alert-heading'>ĐĂNG KÝ THÀNH CÔNG</h4>
+        <p>Chúc quý khách mua sắm vui vẻ cùng với DRESSORE</p>
+        <hr />
+        <a href='/dang-nhap' class='float-end' style='text-decoration: underline;'>Đăng nhập (<span
+                class='count-down'
+            ></span>)
+        </a>
+        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+    <div
+        class='col-12 alert alert-danger alert-dismissible fade show d-none'
+        id='message-box-error-register'
+        role='alert'
+    >
+        <h4 class='alert-heading'>ĐĂNG KÝ LỖI</h4>
+        <p class='error-message-register'></p>
+        <hr />
+        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+</div>
+<div class='row mt-5 pb-5 d-flex justify-content-center'>
+    <form class='col-lg-6 d-flex flex-column gap-4' id='register-form' method='post'>
+        <h5>Tài khoản</h5>
+        <div class='d-flex gap-4 border-top pt-3'>
+            <div class='d-flex flex-column w-50'>
+                <label for='user-phone-register'>SỐ ĐIỆN THOẠI</label>
+                <input id='user-phone-register' name='phone' placeholder='Số điện thoại*' class='px-2 py-1 mt-1' />
+            </div>
+            <div class='d-flex flex-column w-50'>
+                <label for='user-name-register'>HỌ VÀ TÊN</label>
+                <input id='user-name-register' name='name' placeholder='Họ và tên*' class='px-2 py-1 mt-1' />
+            </div>
+        </div>
+        <div class='d-flex flex-column'>
+            <label for='user-email-register'>EMAIL</label>
+            <input id='user-email-register' name='email' type='email' placeholder='Email*' class='px-2 py-1 mt-1' />
+        </div>
+        <div class='d-flex flex-column'>
+            <label for='user-address-register'>ĐỊA CHỈ</label>
+            <input id='user-address-register' name='address' placeholder='Địa chỉ*' class='px-2 py-1 mt-1' />
+        </div>
+        <div class='d-flex gap-4 border-top pt-3'>
+            <div class='d-flex flex-column w-50'>
+                <label for='user-password-register'>MẬT KHẨU</label>
+                <input
+                    id='user-password-register'
+                    name='password'
+                    type='password'
+                    placeholder='Mật khẩu*'
+                    class='px-2 py-1 mt-1'
+                />
+            </div>
+            <div class='d-flex flex-column w-50'>
+                <label for='user-retype-password-register'>NHẬP LẠI MẬT KHẨU</label>
+                <input
+                    id='user-retype-password-register'
+                    name='retypePassword'
+                    type='password'
+                    placeholder='Nhập lại mật khẩu*'
+                    class='px-2 py-1 mt-1'
+                />
+            </div>
+        </div>
+        <button class='btn btn-primary my-font py-2 fs-4 mt-2' id='register-button' type='submit'>
+            ĐĂNG KÝ
+        </button>
+    </form>
+</div>
+<script src='/script/register.js'></script>

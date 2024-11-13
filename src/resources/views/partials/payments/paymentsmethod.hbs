@@ -1,0 +1,104 @@
+<div class='row'>
+    <div class='col-lg-6 col-md-6 col-sm-12 mt-2'>
+        <h6 class='text-uppercase form-group text-start pb-4'><strong>Giá trị đơn hàng</strong></h6>
+        {{#each productsInCart}}
+            <div class='d-flex row border rounded mt-1 me-1'>
+                <div class='col-2'>
+                    <img src='{{this.thumb}}' class='w-100' />
+                </div>
+                <div class='col-5'>
+                    <p class='m-0'>{{this.name}}</p>
+                </div>
+                <div class='col-2'>
+                    <p>Size: {{this.size}} - SL: {{this.sl}}</p>
+                </div>
+                <div class='col-3'>
+                    <p>{{toVND this.price}}</p>
+                </div>
+            </div>
+        {{/each}}
+        <div class='mt-4'>
+            <div class='item'>
+                <span class='item-key text-uppercase mr-2 fix-value-bill'>Giá trị đơn hàng</span>
+                <span class='item-value'>{{toVND priceTotalCart}}</span>
+                <input type='hidden' name='itemsPrice' id='price-total-cart-val' value='{{priceTotalCart}}' />
+            </div>
+            <hr />
+            <div class='item'>
+                <span class='item-key text-uppercase mr-2 fix-value-bill' style='color: red;'>Khuyến mãi</span>
+                <span class='item-value' id='cart-discount-by-quantity' style='color: red;'>{{toVND discount}}</span>
+                <input type='hidden' name='discount' id='discount-val' value='{{discount}}' />
+            </div>
+            <hr />
+
+            <div class='item' id='item-shipping'>
+                <span class='item-key mr-2 fix-value-bill'>Phí shipping</span>
+                <span class='item-value' id='cart-shipping-fee'></span>
+                <input id='fee-ship' type='hidden' name='shippingFee' />
+            </div>
+            <hr />
+            <div class='item'>
+                <span class='item-key mr-2 fix-value-bill'>Tổng cộng</span>
+                <span class='item-value' id='cart-grand-total'></span>
+                <input id='grand-total-val' type='hidden' name='totalPrice' value='' />
+            </div>
+            <hr />
+
+            <div class='col-12 input-customer-note pl-0 pr-0'>
+                <h4 class='font-sfui col-sm-10 checkout_page_header checkout_page_header_s'><i
+                        class='fa fa-info-circle'
+                        aria-hidden='true'
+                    ></i>&nbsp;&nbsp;Ghi chú</h4>
+
+                <div class='from-row no-margin'>
+                    <div class='form-group col-md-12 pl-0 pr-0'>
+                        <textarea class='form-control' name='customerNote' rows='4'></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='col-lg-6 col-md-6 col-sm-12 mt-2 payments-method border-start border-primary'>
+        <h6 class='text-uppercase form-group text-start pb-4'><strong>Hình thức thanh toán</strong></h6>
+        <div class='d-flex align-items-center'>
+            <input
+                class='form-check-input'
+                value='1'
+                type='radio'
+                name='paymentsMethod'
+                id='payments-method-1'
+                checked
+            />
+            <label class='form-check-label ps-3' for='payments-method-1'>
+                Thanh toán khi nhận hàng
+            </label>
+        </div>
+        <div class='d-flex align-items-center mt-3'>
+            <input class='form-check-input' value='2' type='radio' name='paymentsMethod' id='payments-method-2' />
+            <label class='form-check-label ps-3' for='payments-method-2'>
+                Tài khoản
+            </label>
+        </div>
+    </div>
+</div>
+<div class='row'>
+    <div class='col-6 text-center mb-3'>
+        <button
+            id='back-to-information'
+            class='btn btn-primary float-end text-white btn-continue rounded-0 mt-4 mb-3 step1'
+        >
+            Quay lại
+        </button>
+
+    </div>
+    <div class='col-6 text-center mb-3'>
+        <button
+            id='confirm-payments'
+            class='btn btn-dark float-start text-white btn-continue rounded-0 mt-4 mb-3 step1'
+            style='background-color:black'
+        >
+            Xác nhận
+        </button>
+
+    </div>
+</div>

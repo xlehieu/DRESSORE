@@ -1,0 +1,35 @@
+<form method='post' id='create-category-form' enctype='multipart/form-data'>
+    <div class='row mt-3'>
+        <div class='col-12'>
+            <h4>THÊM DANH MỤC</h4>
+        </div>
+        <div class='col-12 d-flex flex-column gap-4'>
+            <div class='d-flex flex-column'>
+                <label for='news-title-create'>TIÊU ĐỀ</label>
+                <input id='news-title-create' name='title' placeholder='Tiêu đề tin tức*' class='px-2 py-1 mt-1' />
+            </div>
+            <div class='d-flex flex-column'>
+                <label for='news-title-create'>NỘI DUNG NGẮN</label>
+                <input id='news-title-create' name='shortContent' placeholder='Nội dung ngắn*' class='px-2 py-1 mt-1' />
+            </div>
+            <div class='d-flex flex-column'>
+                <label for='news-content-create'>NỘI DUNG</label>
+                <textarea id='summernote' name='content'></textarea>
+            </div>
+            <div class='d-flex flex-column'>
+                <label for='category-thumb-create'>HÌNH ẢNH</label>
+                <input
+                    id='category-thumb-create'
+                    name='thumb'
+                    type='file'
+                    placeholder='Hình ảnh'
+                    class='px-2 py-1 border border-dark'
+                />
+            </div>
+            <div>
+                <button class='btn btn-primary fs-5 float-end' type='submit'>THÊM TIN TỨC</button>
+            </div>
+        </div>
+    </div>
+</form>
+<script src='/script/admin/category.js'></script>

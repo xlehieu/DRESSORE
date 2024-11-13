@@ -1,0 +1,39 @@
+<div class='row mt-3'>
+    <div class='col-12'>
+        <h4> CHI TIẾT DANH MỤC</h4>
+    </div>
+    <div class='col-12'>
+        {{#if product}}
+            <table class='table table-striped table-hover'>
+                <tbody>
+                    <tr>
+                        <th class='text-black' style='min-width: 180px;'>TÊN SẢN PHẨM</th>
+                        <td class='min-width-400'>{{product.name}}</td>
+                    </tr>
+                    <tr>
+                        <th class='text-black'>GIÁ</th>
+                        <td>{{toVND product.price}}</td>
+                    </tr>
+                    <tr>
+                        <th class='text-black'>SỐ LƯỢNG</th>
+                        <td>{{product.quantity}}</td>
+                    </tr>
+                    <tr>
+                        <th class='text-black'>DANH MỤC</th>
+                        <td>{{#if product.category}}{{product.catName}}{{else}}KHÔNG CÓ DANH MỤC{{/if}}</td>
+                    </tr>
+                    <tr>
+                        <th class='text-black'>MÔ TẢ SẢN PHẨM</th>
+                        <td>{{{product.description}}}</td>
+                    </tr>
+                    <tr>
+                        <th class='text-black'>HÌNH ẢNH</th>
+                        <td><img src='{{product.thumb}}' style='max-width: 100%;' alt='{{product.name}}' /></td>
+                    </tr>
+                </tbody>
+            </table>
+        {{else}}
+            <h4>KHÔNG CÓ DANH MỤC</h4>
+        {{/if}}
+    </div>
+</div>

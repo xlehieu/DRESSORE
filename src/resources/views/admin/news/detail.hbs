@@ -1,0 +1,31 @@
+<div class='row mt-3'>
+    <div class='col-12'>
+        <h4> CHI TIẾT TIN TỨC</h4>
+    </div>
+    <div class='col-12'>
+        {{#if news}}
+            <table class='table table-striped table-hover'>
+                <tbody>
+                    <tr>
+                        <th class='text-black' style='min-width: 180px;'>TIÊU ĐỀ TIN TỨC</th>
+                        <td class='min-width-400 fs-4 text-black'>{{news.title}}</td>
+                    </tr>
+                    <tr>
+                        <th class='text-black'>NỘI DUNG NGẮN</th>
+                        <td class='fs-5 text-black'>{{news.shortContent}}</td>
+                    </tr>
+                    <tr>
+                        <th class='text-black'>ẢNH</th>
+                        <td><img width='100%' src='{{news.thumb}}' alt='{{news.title}}' /></td>
+                    </tr>
+                    <tr>
+                        <th class='text-black'>NỘI DUNG CHI TIẾT</th>
+                        <td>{{{news.content}}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        {{else}}
+            <h4>LỖI!!!! KHÔNG CÓ THÔNG TIN CHI TIẾT</h4>
+        {{/if}}
+    </div>
+</div>

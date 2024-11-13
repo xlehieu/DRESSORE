@@ -1,0 +1,82 @@
+<div class='d-flex flex-column justify-content-center mt-5 pb-5 border-bottom'>
+    <p class='text-center text-body-emphasis fw-semibold my-font'>
+        BẠN ĐÃ CÓ TÀI KHOẢN
+    </p>
+    <p class='text-center my-font fw-medium'>
+        Đăng nhập tài khoản của bạn tại DRESSORE
+    </p>
+    <form id='login-form' method='post'>
+        <div class='row d-flex justify-content-center'>
+            <div class='d-flex flex-column justify-content-center col col-4 gap-3'>
+                <div class='d-flex flex-column justify-content-center gap-3'>
+                    <input
+                        width='370'
+                        height='38'
+                        class='px-3 py-2 my-font'
+                        name='phone'
+                        id='user-phone-login'
+                        placeholder='Số điện thoại*'
+                    />
+                    <input
+                        width='370'
+                        height='38'
+                        class='px-3 py-2 my-font'
+                        name='password'
+                        type='password'
+                        id='user-password-login'
+                        placeholder='Mật khẩu*'
+                    />
+                </div>
+                <div class='text-end'>
+                    <a class='text-decoration-underline my-font fw-semibold' href=''>Quên mật khẩu</a>
+                </div>
+                <div class='text-start my-font'>
+                    <label for='check-remember-me' class='remember-me d-flex gap-2'>
+                        <input
+                            id='check-remember-me'
+                            style='width: 0px; height: 0px;'
+                            name='rememberMe'
+                            class='checkbox-info'
+                            type='checkbox'
+                        />
+                        <span class='checkmark-remember-me d-flex align-items-center justify-content-center'>
+                            <i class='fa-solid fa-check' style='font-size: 20px; color:white'></i>
+                        </span>
+                        Ghi nhớ tài khoản
+                    </label>
+                </div>
+                <div class='d-grid mt-3'>
+                    <button id='login-button' class='btn btn-primary my-font py-2 fs-4' type='submit'>Đăng nhập</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class='row pt-4'>
+    <div class='col d-flex align-items-center justify-content-center'>
+        <div class='register-user'>
+            <h6 class='text-center'>TẠO TÀI KHOẢN NGƯỜI DÙNG MỚI</h6>
+            <p>Tạo tài khoản của bạn và mua hàng chỉ với 1 bước</p>
+            <ul class='register-user-ben'>
+                <li><i class='fa-solid fa-check pe-2'></i><p>Thanh toán dễ dàng</p></li>
+                <li><i class='fa-solid fa-check pe-2'></i><p>Tránh phải nhập lại thông tin nhận hàng và thanh toán cho
+                        các lần mua sau</p></li>
+                <li><i class='fa-solid fa-check pe-2'></i><p>Được hưởng các chương trình ưu đãi và khuyến mãi</p></li>
+                <li><i class='fa-solid fa-check pe-2'></i><p>Dễ dàng quản lý đơn hàng</p></li>
+            </ul>
+            <div class='d-grid mt-3'>
+                <a href='/dang-ky' class='btn fs-4 btn-primary my-font py-2' type='submit'>Đăng ký</a>
+            </div>
+        </div>
+    </div>
+    <div class='col d-flex align-items-center justify-content-center'>
+        <div class='register-user'>
+            <h6 class='text-center'>ĐẶT HÀNG KHÔNG CẦN THANH TOÁN</h6>
+            <p>Đặt mua ngay và sau khi đặt mua hàng xong bạn có thể tạo tài khoản mới nếu muốn</p>
+            <div class='d-grid mt-3'>
+                <button class='btn fs-4 btn-primary my-font py-2' type='submit'>Đặt hàng</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src='/script/login.js'></script>
